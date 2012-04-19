@@ -1,0 +1,18 @@
+{
+  "name": "WMext",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "A Wikipedia Media Extension.",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://en.wikipedia.org/*"],
+      "js": ["jquery.min.js", "wmext.js"],
+      "css": []
+    }
+  ],
+  "permissions": [
+  ]
+}
