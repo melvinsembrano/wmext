@@ -9,8 +9,8 @@
   "content_scripts": [
     {
       "matches": ["http://en.wikipedia.org/*"],
-      "js": ["js/jquery.min.js", "js/wmext.js"],
-      "css": []
+      "js": ["js/jquery.min.js", "fancybox/jquery.fancybox.js", "js/wmext.js"],
+      "css": ["css/wmext.css", "fancybox/jquery.fancybox.css"]
     }
   ],
   "permissions": [

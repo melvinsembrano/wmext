@@ -38,6 +38,7 @@ var wmext = {
   },
 
   createVideoList: function(data, el) {
+    var me = this;
     var ul = $("<ul class='video-list'></ul>");
     $.each(data.feed.entry, function(i, item) {
       var thumb = item.media$group.media$thumbnail[0];
@@ -45,17 +46,27 @@ var wmext = {
         $("<li></li>").html(
           $("<a></a>").attr("href", item.content.src).html(
             $("<img></img>").attr("src", thumb.url).attr("width", thumb.width)
-          )
+          ).click(function() {
+            me.showVideo(item);
+            return false;
+          })
         )
       );
     });
     $(el).html(ul);
   },
 
+  showVideo: function(item) {
+    $.fancybox.open([{
+      content: $("<iframe width='560' height='315' frameborder='0' allowfullscreen></iframe>").attr("src",item.content.src),
+      title: item.title.$t
+    }]);
+  },
+
   search: function(p, callback) {
     var order = "relevance";
     var index = "1";
-    var max = "5";
+    var max = "8";
     var format = "json";
     var url = "http://gdata.youtube.com/feeds/api/videos?q="+p+"&orderby="+order+"&start-index="+index+"&max-results="+max+"&v=2&alt="+format;
     $.get(url, function(data){

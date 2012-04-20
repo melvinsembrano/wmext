@@ -1,0 +1,13 @@
+ul.video-list {
+  list-style: none;
+}
+
+ul.video-list li { 
+  float: left;
+  margin: 4px 2px;
+}
+
+.video-panel {
+  height: 120px;
+  margin-top: 2em;
+}
