@@ -9,7 +9,7 @@
   "content_scripts": [
     {
       "matches": ["http://en.wikipedia.org/*"],
-      "js": ["jquery.min.js", "wmext.js"],
+      "js": ["js/jquery.min.js", "js/wmext.js"],
       "css": []
     }
   ],
